@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analyzer - Decode Her Feelings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Sentiment Analyzer</h1>
+    <h2>Decode Her Feelings</h2>
+    <p>Ever wondered what she really means? Enter her words below and find out!</p>
+    <form method="POST">
+        <input type="text" name="text" placeholder="Enter her words here" required>
+        <button type="submit">Analyze Sentiment</button>
+    </form>
+    {% if sentiment %}
+        <p>Interpretation: {{ sentiment }}</p>
+    {% endif %}
+</body>
+</html>
